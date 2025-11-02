@@ -1,0 +1,39 @@
+[build-system]
+requires = [
+    "setuptools >= 77.0.3",
+    "setuptools-git-versioning>=2.0,<3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src/"]
+include = [
+    "marinholab.nottf2",
+]
+
+[project]
+name = "nottf2"
+dynamic = [
+    "version"
+]
+authors = [
+  {name = "Murilo M. Marinho", email = "murilomarinho@ieee.org"}
+]
+maintainers = [
+  {name = "Murilo M. Marinho", email = "murilomarinho@ieee.org"}
+]
+description = "Add utilities for `tf2` in Python not currently built-in in ROS2."
+readme = "README.md"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3"
+]
+
+[project.urls]
+Homepage = "https://github.com/MarinhoLab/nottf2"
+
+# https://pypi.org/project/setuptools-git-versioning/
+[tool.setuptools-git-versioning]
+enabled = true
+# https://stackoverflow.com/questions/73605607/how-to-use-setuptools-scm
+dev_template = "{tag}.{ccount}"
+dirty_template = "{tag}.{ccount}"
