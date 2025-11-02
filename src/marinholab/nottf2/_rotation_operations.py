@@ -16,8 +16,8 @@ def rx(phi: float) -> Quaternion:
     """
     return Quaternion(w = cos(phi/2.0),
                       x = sin(phi/2.0),
-                      y = 0,
-                      z = 0)
+                      y = 0.0,
+                      z = 0.0)
 
 def ry(phi: float) -> Quaternion:
     """
@@ -26,9 +26,9 @@ def ry(phi: float) -> Quaternion:
     :return: the rotation quaternion.
     """
     return Quaternion(w = cos(phi/2.0),
-                      x = 0,
+                      x = 0.0,
                       y = sin(phi/2.0),
-                      z = 0)
+                      z = 0.0)
 
 def rz(phi: float) -> Quaternion:
     """
@@ -37,8 +37,8 @@ def rz(phi: float) -> Quaternion:
     :return: the rotation quaternion.
     """
     return Quaternion(w = cos(phi/2.0),
-                      x = 0,
-                      y = 0,
+                      x = 0.0,
+                      y = 0.0,
                       z = sin(phi/2.0))
 
 def rotation_inverse(r: Quaternion) -> Quaternion:
