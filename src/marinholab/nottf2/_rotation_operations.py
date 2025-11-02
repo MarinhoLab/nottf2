@@ -8,26 +8,38 @@ from geometry_msgs.msg import Quaternion
 from marinholab.nottf2._quaternion_operations import quaternion_norm
 
 
-def rotx(phi: float):
-    """Return the quaternion representing a rotation of phi radians about the x-axis."""
+def rotx(phi: float) -> Quaternion:
+    """
+    Return the quaternion representing a rotation of phi radians about the x-axis.
+    :param phi: rotation angle, in radians.
+    :return: the rotation quaternion.
+    """
     return Quaternion(w = cos(phi/2.0),
-                      x = sin(phi/2),
+                      x = sin(phi/2.0),
                       y = 0,
                       z = 0)
 
-def roty(phi: float):
-    """Return the quaternion representing a rotation of phi radians about the y-axis."""
+def roty(phi: float) -> Quaternion:
+    """
+    Return the quaternion representing a rotation of phi radians about the y-axis.
+    :param phi: rotation angle, in radians.
+    :return: the rotation quaternion.
+    """
     return Quaternion(w = cos(phi/2.0),
                       x = 0,
-                      y = sin(phi/2),
+                      y = sin(phi/2.0),
                       z = 0)
 
-def rotz(phi: float):
-    """Return the quaternion representing a rotation of phi radians about the z-axis."""
+def rotz(phi: float) -> Quaternion:
+    """
+    Return the quaternion representing a rotation of phi radians about the z-axis.
+    :param phi: rotation angle, in radians.
+    :return: the rotation quaternion.
+    """
     return Quaternion(w = cos(phi/2.0),
                       x = 0,
                       y = 0,
-                      z = sin(phi/2))
+                      z = sin(phi/2.0))
 
 def rotation_inverse(r: Quaternion) -> Quaternion:
     """
