@@ -6,8 +6,9 @@ import numpy as np
 
 try:
     from geometry_msgs.msg import Quaternion
-except ModuleNotFoundError:
+except ModuleNotFoundError as e:
     print("This module needs `ros2` to be installed. Please install `ros2` and properly source the environment.")
+    raise e
 
 def _quaternion_to_ndarray(a: Quaternion) -> np.ndarray:
     return np.ndarray([a.w, a.x, a.y, a.z])

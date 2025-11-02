@@ -15,6 +15,9 @@ name = "nottf2"
 dynamic = [
     "version"
 ]
+dependencies = [
+    "numpy"
+]
 authors = [
   {name = "Murilo M. Marinho", email = "murilomarinho@ieee.org"}
 ]
