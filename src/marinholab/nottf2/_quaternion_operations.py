@@ -1,3 +1,7 @@
+"""
+Copyright (c) 2025. Murilo Marques Marinho (murilomarinho.info)
+MIT License.
+"""
 import numpy as np
 
 try:

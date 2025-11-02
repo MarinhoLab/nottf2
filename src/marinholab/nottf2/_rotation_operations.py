@@ -1,14 +1,41 @@
+"""
+Copyright (c) 2025. Murilo Marques Marinho (murilomarinho.info)
+MIT License.
+"""
 import numpy as np
-from math import isclose
+from math import isclose, sin, cos
 from geometry_msgs.msg import Quaternion
 from marinholab.nottf2._quaternion_operations import quaternion_norm
 
+
+def rotx(phi: float):
+    """Return the quaternion representing a rotation of phi radians about the x-axis."""
+    return Quaternion(w = cos(phi/2.0),
+                      x = sin(phi/2),
+                      y = 0,
+                      z = 0)
+
+def roty(phi: float):
+    """Return the quaternion representing a rotation of phi radians about the y-axis."""
+    return Quaternion(w = cos(phi/2.0),
+                      x = 0,
+                      y = sin(phi/2),
+                      z = 0)
+
+def rotz(phi: float):
+    """Return the quaternion representing a rotation of phi radians about the z-axis."""
+    return Quaternion(w = cos(phi/2.0),
+                      x = 0,
+                      y = 0,
+                      z = sin(phi/2))
 
 def rotation_inverse(r: Quaternion) -> Quaternion:
     """
     Calculate the inverse of a rotation quaternion. It supposes that the input quaternion has unit norm
     and returns an exception otherwise.
 
+    :param r: rotation quaternion.
+    :return: rotation quaternion inverse (its conjugate).
     :see: https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
     """
     n = quaternion_norm(r)
