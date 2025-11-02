@@ -11,7 +11,7 @@ except ModuleNotFoundError as e:
     raise e
 
 def _quaternion_to_ndarray(a: Quaternion) -> np.ndarray:
-    return np.ndarray([a.w, a.x, a.y, a.z])
+    return np.array([a.w, a.x, a.y, a.z])
 
 def _ndarray_to_quaternion(a_vec: np.ndarray) -> Quaternion:
     return Quaternion(w = a_vec[0],
@@ -53,7 +53,7 @@ def quaternion_multiply(a: Quaternion, b: Quaternion) -> Quaternion:
     # We will take advantage of that here.
 
     ## See https://en.wikipedia.org/wiki/Quaternion#Representation_as_complex_2_×_2_matrices
-    H_plus_a = np.ndarray([[aw, -ax, -ay, -az],
+    H_plus_a = np.array([[aw, -ax, -ay, -az],
                            [ax, aw, -az, ay],
                            [ay, az, aw, -ax],
                            [az, -ay, ax, aw]])
